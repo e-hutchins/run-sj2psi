@@ -13,13 +13,16 @@ pip install .
  - `submit_sj2psi.sh` : submits above python script to slurm cluster
 
 ## execution
-assumes you have a `samples.txt` file that contains sample IDs. This should match the parent directory for the star output folder.
+assumes you have a `samples.txt` file that contains sample IDs. This should match the parent directory for the SJ.out.tab file.
 
-| results
-...| star
-......| sample1
-......| sample2
-......| sample3
+.
+├── star/
+│   ├── sample1/
+│   │   └── sample1.SJ.out.tab
+│   ├── sample2/
+│   │   └── sample2.SJ.out.tab
+│   ├── sample3/
+│   │   └── sample3.SJ.out.tab
 
 ```
 SAMPLES=($(cat samples.txt))
