@@ -13,14 +13,8 @@
 module load python/3.10 || exit 1
 
 # Get the sample name from the command line argument
-INPUT_FILE="${SAMPLE_NAME}.SJ.out.tab"
-OUTPUT_FILE="${SAMPLE_NAME}.SJ.withPSIs.txt"
-
-#cd into the directory with the input file
-cd ${STAR_DIR}
-cd ${SAMPLE_NAME}
+INPUT_FILE="${STAR_DIR}/${SAMPLE_NAME}/${SAMPLE_NAME}.SJ.out.tab"
+OUTPUT_FILE="${STAR_DIR}/${SAMPLE_NAME}/${SAMPLE_NAME}.SJ.withPSIs.txt"
 
 # Run the Python script
 python3 scripts/run_sj2psi.py $INPUT_FILE $OUTPUT_FILE
-
-cd ..
