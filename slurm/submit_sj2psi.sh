@@ -7,7 +7,7 @@
 #execute as so:
 #SAMPLES=($(cat ${PROJECT_DIR}/samples.txt))
 #STAR_DIR=/path/to/your/star_parent_directory/
-# for SAMPLE in "${SAMPLES[@]}"; do echo $SAMPLE; sbatch -J sj2psi_$SAMPLE --export=ALL,SAMPLE_NAME=${SAMPLE},STAR_DIR=${STAR_DIR} scripts/submit_sj2psi.sh ; sleep 1 ; done
+# for SAMPLE in "${SAMPLES[@]}"; do echo $SAMPLE; sbatch -J sj2psi_$SAMPLE --export=ALL,SAMPLE_NAME=${SAMPLE},STAR_DIR=${STAR_DIR} slurm/submit_sj2psi.sh ; sleep 1 ; done
 
 #load modules
 module load python/3.10 || exit 1
@@ -17,4 +17,8 @@ INPUT_FILE="${STAR_DIR}/${SAMPLE_NAME}/${SAMPLE_NAME}.SJ.out.tab"
 OUTPUT_FILE="${STAR_DIR}/${SAMPLE_NAME}/${SAMPLE_NAME}.SJ.withPSIs.txt"
 
 # Run the Python script
+<<<<<<< HEAD:slurm/submit_sj2psi.sh
+python3 scripts/run_sj2psi.py ${INPUT_FILE} ${OUTPUT_FILE}
+=======
 python3 scripts/run_sj2psi.py $INPUT_FILE $OUTPUT_FILE
+>>>>>>> main:scripts/submit_sj2psi.sh
