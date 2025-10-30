@@ -17,4 +17,8 @@ INPUT_FILE="${STAR_DIR}/${SAMPLE_NAME}/${SAMPLE_NAME}.SJ.out.tab"
 OUTPUT_FILE="${STAR_DIR}/${SAMPLE_NAME}/${SAMPLE_NAME}.SJ.withPSIs.txt"
 
 # Run the Python script
+<<<<<<< HEAD:slurm/submit_sj2psi.sh
 python3 scripts/run_sj2psi.py ${INPUT_FILE} ${OUTPUT_FILE}
+=======
+python3 scripts/run_sj2psi.py $INPUT_FILE $OUTPUT_FILE
+>>>>>>> main:scripts/submit_sj2psi.sh
